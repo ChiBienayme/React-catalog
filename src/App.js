@@ -1,6 +1,7 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom"
-import Catalog from "./catalog.json"
+import { BrowserRouter, Switch, Route } from "react-router-dom"
+
+import Movie from "./pages/Movie"
 
 
 class App extends React.Component {
@@ -12,11 +13,11 @@ class App extends React.Component {
 
             <Switch>
               
-              <Route path="/catalog/:id" component={Catalog} />
+              <Route path="/movie/:id" component={Movie} />
 
             </Switch>
 
-          </BrowserRouter>
+      </BrowserRouter>
     )
           
   }
