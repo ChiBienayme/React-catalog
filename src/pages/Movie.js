@@ -1,28 +1,25 @@
 import React from 'react'
-import { Link } from "react-router-dom"
-import movies from "../movies.json"
-
+import { Link } from "react-router-dom";
 
 class Movie extends React.Component {
-
-    render() {
-        return <div>
-
-                <h2> List of Movies </h2>
-
-                {
-                    movies.map(movie => {
-                        return <ul>
-                            <li>{movie.title} </li>
-                        </ul>
-                    })
-                }
-                <Link to="/"> Back to homepage </Link>
-                
-           
-            </div>
+  render() {
+    return (
+      <div> 
+        <h2>Info of movie </h2>
+          
+        <ul>
+            <img scr={this.props.movies.image} alt=""/> 
+            <li> <p> Name of movie: {this.props.match.params.title} </p> </li>
+            <li> <p> Director: {this.props.match.params.director} </p> </li>
+            <li> <p> Star: {this.props.match.params.stars} </p> </li>
+            <li> <p> Description: {this.props.match.params.description} </p> </li>
+        </ul>
         
-    }
+        <Link to="/">Back to Homepage</Link>
+                 
+      </div>
+    )
+  }
 }
 
-export default Movie;
+export default Movie
